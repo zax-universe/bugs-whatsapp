@@ -249,7 +249,7 @@ const rnp = {
     interactiveMessage: {
       header: {
         hasMediaAttachment: true,
-        jpegThumbnail: fs.readFileSync('./Images/img.jpg')
+        jpegThumbnail: fs.readFileSync('./System/lgeX7.jpg')
       },
       nativeFlowMessage: {
         buttons: [
@@ -271,7 +271,7 @@ const rnp = {
                   {
                     retailer_id: "25127408720248432",
                     product_id: "25127408720248432",
-                    name: "PDF's - WaBot",
+                    name: "ZaxUniver - WaBot",
                     amount: { value: 72050000, offset: 100 },
                     quantity: 1
                   }
